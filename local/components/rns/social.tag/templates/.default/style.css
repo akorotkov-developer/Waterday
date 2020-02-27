@@ -1,0 +1,8 @@
+input.social-save {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+}
+.social-ig {
+    background: url(/local/templates/main/assets/images/icons/social-ig.svg) 0 0/contain no-repeat;
+}
