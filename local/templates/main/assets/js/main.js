@@ -54,6 +54,11 @@ $(document).ready(function() {
 				dots: true,
 				infinite: true,
 			});
+
+			setTimeout(function() {
+				console.log("it work");
+				$(".js-lightgallery").lightGallery();
+			}, 300);
 		}
 		setTimeout(initslick, 200);
 	});

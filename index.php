@@ -275,7 +275,8 @@ $APPLICATION->SetTitle("");
 	"rns:social.tag",
 	"",
 	Array(
-		"CACHE_TIME" => "360000"
+		"CACHE_TIME" => "1",
+        "CACHE_TYPE" => "N"
 	)
 );?>
 	</div>
