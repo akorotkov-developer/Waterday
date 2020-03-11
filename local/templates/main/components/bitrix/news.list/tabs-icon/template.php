@@ -2,7 +2,7 @@
 
 <?if(empty($arResult['ITEMS'])) return;?>
 
-<ul class="nav nav-tabs sdfgsdfgfdg" role="tablist">
+<ul class="nav nav-tabs" role="tablist">
 <? $countStart = $count = 5;
 foreach ($arResult['ITEMS'] as $arItem) :?>
     <li class="nav-item"><a class="nav-link <?if($count == $countStart):?>active<?endif;?>" id="tab-<?=$count?>" data-toggle="tab" href="#tab-pane-<?=$count?>" role="tab" aria-controls="home" aria-selected="true"><span class="icon">
@@ -31,9 +31,6 @@ foreach ($arResult['ITEMS'] as $arItem) :
             <?
             if (count($arItem['DISPLAY_PROPERTIES']['GALLERY']['FILE_VALUE'] > 3)) {
                 $slider = "slick-slider-block";
-                if (count($arItem['DISPLAY_PROPERTIES']['GALLERY']['FILE_VALUE'])  < 5) {
-                    $addElement = true;
-                }
             } else {
                 $slider = "";
             }
@@ -46,21 +43,15 @@ foreach ($arResult['ITEMS'] as $arItem) :
                     foreach ($arItem['DISPLAY_PROPERTIES']['GALLERY']['FILE_VALUE'] as $arFile) :?>
                         <?$file = CFile::GetFileArray($arFile["ID"]);
                         $resizeFile = CFile::ResizeImageGet($file, array("width" => 240, "height" => 160));?>
-                        <?
-                        if ($addElement) {
-                            $element = '<a class="tabs-img" href="' .$arFile['SRC'] . '"><img src="' . $resizeFile['src'] . '" alt=""></a>';
-                            $addElement = false;
-                        }
-                        ?>
                         <a class="tabs-img" href="<?= $arFile['SRC']?>"><img src="<?= $resizeFile['src']?>" alt=""></a>
                     <?endforeach;
-
-                    echo $element;
 
                     else:?>
                         <?$file = CFile::GetFileArray($arItem['DISPLAY_PROPERTIES']['GALLERY']['FILE_VALUE']["ID"]);
                         $resizeFile = CFile::ResizeImageGet($file, array("width" => 1180, "height" => 1010));?>
-                        <a class="tabs-img-big" href="<?= $arItem['DISPLAY_PROPERTIES']['GALLERY']['FILE_VALUE']['SRC']?>"><img src="<?= $resizeFile['src']?>" alt=""></a>
+                        <a class="tabs-img-big" href="<?= $arItem['DISPLAY_PROPERTIES']['GALLERY']['FILE_VALUE']['SRC']?>">
+                            <img src="<?= $resizeFile['src']?>" alt="">
+                        </a>
                 <?endif;?>
             </div>
         <?endif;?>
