@@ -12317,6 +12317,10 @@ a:hover {
   margin-bottom: 0;
 }
 
+.lg-image {
+    max-height: 600px!important;
+}
+
 .about-slider .slick-arrow {
   top: calc(100% - 25px);
   width: 28px;
