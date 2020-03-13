@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");
-?><main class="main-content">
+$APPLICATION->SetTitle(""); ?>
+<main class="main-content">
 <div class="about-info" id="about-info">
 	<div class="container">
 		<div class="row">

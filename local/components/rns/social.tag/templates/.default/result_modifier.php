@@ -11,6 +11,16 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+if (!function_exists("cmp2")) {
+    function cmp2($a, $b)
+    {
+        return strcmp($a["DATE"], $b["DATE"]);
+    }
+}
+usort($arResult["ITEMS"], "cmp2");
+
+$arResult["ITEMS"] = array_reverse($arResult["ITEMS"]);
+
 foreach($arResult["ITEMS"] as &$arItem) {
     if($arItem["NETWORK"] == "VKONTAKTE")
         $arItem["ICON"] = 'social-vk';

@@ -55,6 +55,7 @@ class CVkontakte extends ANetwork
             $postArr = array(
                 "NETWORK" => static::NETWORK_NAME,
                 "TEXT"    => $item->text,
+                "DATE"    => $item->date
             );
 
             if($entity[$item->from_id])

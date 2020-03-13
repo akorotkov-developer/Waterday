@@ -16,7 +16,6 @@ global $USER;
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/assets/css/libs/jquery.jscrollpane.css');
 $this->addExternalJs(SITE_TEMPLATE_PATH . '/assets/js/libs/jquery.jscrollpane.min.js');
 $this->addExternalJs(SITE_TEMPLATE_PATH . '/assets/js/libs/jquery.mousewheel.js');
-
 ?>
 <?php if($arResult["ITEMS"]) {?>
     <?if($arResult["MODULE_RIGHT"] === "W"):?>
